@@ -44,7 +44,6 @@ class App extends Component {
     }
 
     getTitle = (friendsType) => {
-        console.log(friendsType)
         return `${friendsType.toLowerCase().includes('obo')
                 ? 'Robo' : friendsType + ' '}Friends`
     }
