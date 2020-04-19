@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Roboto:wght@400;900&family=Share+Tech+Mono&display=swap');
+body {
+    background: linear-gradient(to left, rgba(7, 27, 82) 0%, rgb(0, 128, 128) 100%);
+    color: rgb(5, 19, 56);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #0ccac4d7;
+    font-family: 'Black Ops One', monospace;
+    font-size: 4rem;
+    font-weight: bolder;
+    text-shadow: .05em .05em 0 rgba(7, 27, 82);
+}
+h2 {
+    font-family: 'Roboto', 'Share Tech Mono', monospace;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
