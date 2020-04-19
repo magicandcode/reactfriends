@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/reactfriends/static/css/main.d2511a50.chunk.css",
+    "main.js": "/reactfriends/static/js/main.b01e4693.chunk.js",
+    "main.js.map": "/reactfriends/static/js/main.b01e4693.chunk.js.map",
+    "runtime-main.js": "/reactfriends/static/js/runtime-main.f2f1f135.js",
+    "runtime-main.js.map": "/reactfriends/static/js/runtime-main.f2f1f135.js.map",
+    "static/css/2.66b7f74f.chunk.css": "/reactfriends/static/css/2.66b7f74f.chunk.css",
+    "static/js/2.5b237668.chunk.js": "/reactfriends/static/js/2.5b237668.chunk.js",
+    "static/js/2.5b237668.chunk.js.map": "/reactfriends/static/js/2.5b237668.chunk.js.map",
+    "index.html": "/reactfriends/index.html",
+    "precache-manifest.bb1938dacdd97562341483af6ac30cd1.js": "/reactfriends/precache-manifest.bb1938dacdd97562341483af6ac30cd1.js",
+    "service-worker.js": "/reactfriends/service-worker.js",
+    "static/css/2.66b7f74f.chunk.css.map": "/reactfriends/static/css/2.66b7f74f.chunk.css.map",
+    "static/css/main.d2511a50.chunk.css.map": "/reactfriends/static/css/main.d2511a50.chunk.css.map",
+    "static/js/2.5b237668.chunk.js.LICENSE": "/reactfriends/static/js/2.5b237668.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f2f1f135.js",
+    "static/css/2.66b7f74f.chunk.css",
+    "static/js/2.5b237668.chunk.js",
+    "static/css/main.d2511a50.chunk.css",
+    "static/js/main.b01e4693.chunk.js"
+  ]
+}
