@@ -11,6 +11,8 @@ I've also added a search counter to display the search result count.
 ## Local Installation
 * Clone this repo: `git clone <repo>`
 * Install locally by running `npm install`
+* Run `npm update` if prompted.
+* If there are warnings when installing, run `npm audit fix`.
 * Start development server by running `npm start`
 
 ### Warning
