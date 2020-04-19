@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Search from '../components/Search'
 import Cards from '../components/Cards'
 import Scroll from '../components/Scroll'
+import ErrorBoundry from '../components/ErrorBoundry'
 import './app.css'
 
 const APP_BASE_TITLE = 'React Friends | '
@@ -15,67 +16,67 @@ const imgSets = {
 }
 
 class App extends Component {
-    constructor() {
-        super()
-        this.state = {
-            robots: [],
-            q: '',
-            imgSet: 1,
-            friendsType: 'Robot',
-            title: 'React FRiedns | RoboFriends',
-        }
+  constructor() {
+    super()
+    this.state = {
+      robots: [],
+      q: '',
+      imgSet: 1,
+      friendsType: 'Robot',
+      title: APP_BASE_TITLE + 'RoboFriends',
+    }
 }
 
     getRoboHashImgUrl = (email, username, id, imgSet) => {
-        return `https://robohash.org/${email.slice(1)}${username}${id}.png?size=200x200&set=set${imgSet}`
+      return `https://robohash.org/${email.slice(1)}${username}${id}.png?size=200x200&set=set${imgSet}`
     }
 
     componentDidMount() {
-        const {friendsType} = this.state
-        document.title = APP_BASE_TITLE + this.getTitle(friendsType)
-        // Get users from REST API.
-        fetch(USERS_URL)
-            .then(response => response.json())
-            .then(users => this.setState({
-                robots: users,
-                friendsType: this.getFriendsType(friendsType),
-                title: this.getTitle(friendsType),
-            }))
+      const {friendsType} = this.state
+      document.title = APP_BASE_TITLE + this.getTitle(friendsType)
+      // Get users from REST API.
+      fetch(USERS_URL)
+          .then(response => response.json())
+          .then(users => this.setState({
+              robots: users,
+              friendsType: this.getFriendsType(friendsType),
+              title: this.getTitle(friendsType),
+          }))
     }
 
     getTitle = (friendsType) => {
-        return `${friendsType.toLowerCase().includes('obo')
-                ? 'Robo' : friendsType + ' '}Friends`
+      return `${friendsType.toLowerCase().includes('obo')
+              ? 'Robo' : friendsType + ' '}Friends`
     }
 
     getFriendsType = value => {
-        let friendsType = 'Robot'
-        if (value === '2') {
-            friendsType = 'Monster'
-        } else if (value === '4') {
-            friendsType = 'Cat'
-        } else if (value === '5') {
-            friendsType = 'Human'
-        }
-        return friendsType
+      let friendsType = 'Robot'
+      if (value === '2') {
+          friendsType = 'Monster'
+      } else if (value === '4') {
+          friendsType = 'Cat'
+      } else if (value === '5') {
+          friendsType = 'Human'
+      }
+      return friendsType
     }
 
     getSearchMessage = (searchResult, friendsType, robotsCount) => {
-        return `Found ${searchResult ? searchResult : 'no'}
-        ${searchResult !== 0 ? 'of ' + robotsCount : ''}
-        ${friendsType}s`
+      return `Found ${searchResult ? searchResult : 'no'}
+      ${searchResult !== 0 ? 'of ' + robotsCount : ''}
+      ${friendsType}s`
     }
 
     onSetChange = event => {
-        // Set state whenever the set select is changed.
-        const value = event.target.value
-        this.setState({imgSet: value, friendsType: this.getFriendsType(value)})
-        document.title = APP_BASE_TITLE + this.getTitle(this.getFriendsType(value))
+      // Set state whenever the set select is changed.
+      const value = event.target.value
+      this.setState({imgSet: value, friendsType: this.getFriendsType(value)})
+      document.title = APP_BASE_TITLE + this.getTitle(this.getFriendsType(value))
     }
 
     onSearchChange = event => {
-        // Set state whenever the search input is changed.
-        this.setState({q: event.target.value})
+      // Set state whenever the search input is changed.
+      this.setState({q: event.target.value})
     }
 
   render() {
@@ -96,7 +97,9 @@ class App extends Component {
           imgSets={imgSets}
         />
         <Scroll>
-          <Cards robots={filteredRobots} imgSet={imgSet} />
+          <ErrorBoundry>
+            <Cards robots={filteredRobots} imgSet={imgSet} />
+          </ErrorBoundry>
         </Scroll>
       </>
     } else {

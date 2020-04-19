@@ -1,6 +1,8 @@
 import React from 'react'
 import Card from './Card'
 
+
+
 const Cards = props => {
     const {robots, imgSet} = props
     const cards = robots.map(robot =>
