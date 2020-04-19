@@ -1,5 +1,5 @@
 # React Friends
-### An extended React project tutorial from [The Complete Web Developer in 2020: Zero to Mastery](https://www.udemy.com/course/the-complete-web-developer-zero-to-mastery/)
+### An extended React project from [The Complete Web Developer in 2020: Zero to Mastery](https://www.udemy.com/course/the-complete-web-developer-zero-to-mastery/)
 
 ![React Friends](/../master/reactfriends.png?raw=true "reactfriends application screen capture")
 
